@@ -2,9 +2,9 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 
-const BACKEND_URL = process.env.REACT_APP_BACKEND_URL;
+const BACKEND_URL = "/api";
 
-const API_URL = `${BACKEND_URL}/api/photos/`;
+const API_URL = `${BACKEND_URL}/photos/`;
 
 // Create New Photo
 const createPhoto = async (formData) => {

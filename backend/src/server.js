@@ -23,16 +23,16 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-app.use(cors({
-    origin: ["http://localhost:3000"],
-    credentials: true
-}));
+// app.use(cors({
+//     origin: ["http://localhost:3000"],
+//     credentials: true
+// }));
 
 import {fileURLToPath} from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-console.log('directory-name 👉️', __dirname);
+// const __filename = fileURLToPath(import.meta.url);
+// const __dirname = path.dirname(__filename);
+// console.log('directory-name 👉️', __dirname);
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
@@ -41,9 +41,11 @@ app.use("/api/users", userRoute);
 app.use("/api/photos", photoRoute);
 
 // Routes
-app.get("/", (req, res) => {
-    res.send("Home Page");
-});
+// app.get("/", (req, res) => {
+//     res.send("Home Page");
+// });
+const __dirname = path.resolve();
+app.use(express.static(path.join(__dirname, "../frontend", "build")));
 
 // Error Middleware
 app.use(errorHandler);

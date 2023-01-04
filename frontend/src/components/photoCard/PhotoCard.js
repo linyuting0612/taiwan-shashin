@@ -6,7 +6,7 @@ import DOMPurify from "dompurify";
 //
 import axios from 'axios';
 const axs = axios.create({
-  baseURL: `http://localhost:4096/api`,
+  baseURL: `/api`,
 });
 //
 
