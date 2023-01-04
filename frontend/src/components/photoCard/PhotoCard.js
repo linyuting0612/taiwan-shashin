@@ -20,8 +20,8 @@ const PhotoCard = ({currentCategory, closeCard}) => {
     }, []);
     
 
-    // const [imgSrc, setImgSrc] = useState('https://res.cloudinary.com/dstzn1rae/image/upload/v1672763301/Screenshot_2023-01-04_at_12.28.06_AM_jmdyxx.png');
-    const [imgSrc, setImgSrc] = useState('');
+    const [imgSrc, setImgSrc] = useState('https://res.cloudinary.com/dstzn1rae/image/upload/v1672763301/Screenshot_2023-01-04_at_12.28.06_AM_jmdyxx.png');
+    // const [imgSrc, setImgSrc] = useState('');
     const [imgName, setImgName] = useState('');
     const [imgDescription, setImgDescription] = useState('');
 
@@ -31,6 +31,7 @@ const PhotoCard = ({currentCategory, closeCard}) => {
     const getPhotoData = async () => {
         // const {data} = await axs.get("/photos");
         const {data} = await axs.get(`/photos/${currentCategory}`);
+        console.log(data);
         setPhotoData(data);
         if(data.length > 0) {
             setImgSrc(data[currentIndex].image.filePath);
