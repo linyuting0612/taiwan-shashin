@@ -1,0 +1,73 @@
+.mapContainer {
+    background-color: #C7F2FF;
+    padding: 50px;
+}
+
+.taiwanMap {
+    height: 72vh;
+    width: 80vw;
+    /* left: 50px; */
+
+
+}
+.mapContainer p{
+    /* display: flexbox; */
+    right: 50vw;
+    position: relative;
+    font-size: 64px;
+    /* opacity: 80%; */
+    font-weight: 600;
+    color: white;
+    text-shadow: gray 0.1rem 0.1rem 0.2rem;
+    margin-bottom: 0%;
+    padding-bottom: 0;
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color: white;
+    transition: color .3s ease-in-out, box-shadow .3s ease-in-out;
+}
+.mapContainer p:hover{
+    box-shadow: inset 100px 0 0 0 #54b3d6;
+    color: white;
+}
+
+
+path {
+    /* fill: rgb(250, 255, 180); */
+    stroke: rgb(222, 222, 222);
+    stroke-width: 2px;
+    transition: 0.25s;
+
+}
+
+/* north area */
+path.north:hover {
+    fill: rgb(255, 201, 180);
+    transition: 0.5s;
+    /* cursor: pointer; */
+}
+
+path.middle:hover {
+    fill: rgb(250, 255, 180);
+    transition: 0.5s;
+    /* cursor: pointer; */
+    /* -webkit-transform: scale(1.5); */
+    z-index: 1;
+}
+
+path.south:hover {
+    fill: rgb(200, 180, 255);
+    transition: 0.5s;
+    /* cursor: pointer; */
+}
+
+path.east:hover {
+    fill: rgb(180, 255, 185);
+    transition: 0.5s;
+    /* cursor: pointer; */
+}
+
+path.other:hover {
+    fill: rgb(188, 188, 188);
+    transition: 0.5s;
+    /* cursor: pointer; */
+}

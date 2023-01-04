@@ -1,0 +1,109 @@
+.photoCard {
+    background-color: rgba(0, 0, 0, 0);
+    position: fixed;
+    position: absolute;
+    top: 20vh;
+    left: 60vw;
+    /* box-sizing: border-box; */
+    border-color: white;
+    /* float: left; */
+    transition: 0.5s;
+
+
+}
+
+.photoName {
+    font-size: 24px;
+    font-weight: 600;
+    margin-top: 5px;
+    color: rgb(110, 110, 110);
+    /* text-shadow: 0.1em 0.1em 0.2em rgb(120, 120, 120); */
+    text-align: center;
+
+}
+
+.photoDescription {
+    font-size: 8px;
+    color: rgb(179, 179, 179);
+    text-align: center;
+
+}
+
+.category {
+    font-size: 12px;
+    color: rgb(95, 95, 95);
+    text-align: center;
+
+}
+
+.photo {
+    height: 300px;
+    z-index: 0;
+
+
+}
+
+
+.imgContainer {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    align-items: center;
+    border: 3px;
+    border-radius: 5px;
+    z-index: 1;
+    background: rgb(255, 255, 255);
+    padding-top: 2.5rem;
+    padding-bottom: 1rem;
+    padding-left: 1.6rem;
+    padding-right: 1.6rem;
+    box-shadow: 0.5em 0.5em 0.4em rgb(184, 184, 184);
+
+}
+
+.closeButtonContainer {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+#prevButton, #nextButton, #closeButton {
+    border-style: none;
+    transition: 0.1s;
+}
+
+#prevButton, #nextButton {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    border-radius: 5px;
+    color: rgb(125, 125, 125);
+    background-color: rgba(255, 255, 255, 0.353);
+}
+
+#closeButton {
+    width: 25px;
+    height: 25px;
+    margin: 3px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.353);
+}
+
+#prevButton:hover, #nextButton:hover, #closeButton:hover {
+    background-color: rgba(102, 102, 102, 0.3);
+    transition: 0.3s;
+    color: rgb(255, 255, 255);
+
+}
+
+#prevButton:active, #nextButton:active, #closeButton:active {
+    background-color: rgba(135, 207, 235, 0.5);
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 700,
+    'GRAD' 0,
+    'opsz' 48
+}
