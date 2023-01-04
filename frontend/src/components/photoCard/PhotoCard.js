@@ -14,9 +14,7 @@ const axs = axios.create({
 const PhotoCard = ({currentCategory, closeCard}) => {
 
     useEffect(() => {
-        return (() => {
-          getPhotoData();
-        });
+        getPhotoData();
     }, []);
     
 
