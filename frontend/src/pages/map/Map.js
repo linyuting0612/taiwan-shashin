@@ -19,6 +19,7 @@ const Map = () => {
             <svg className="taiwanMap" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1295" aria-label="Map of Taiwan">
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Changhua County')
                         setShowCard(true);
                     }}
@@ -29,6 +30,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Chiayi City')
                         setShowCard(true);
                     }}
@@ -39,6 +41,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Chiayi County')
                         setShowCard(true);
                     }}
@@ -49,6 +52,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Hualien County')
                         setShowCard(true);
                     }}
@@ -59,6 +63,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Hsinchu City')
                         setShowCard(true);
                     }}
@@ -69,6 +74,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Hsinchu County')
                         setShowCard(true);
                     }}
@@ -79,6 +85,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Kaohsiung City')
                         setShowCard(true);
                     }}
@@ -89,6 +96,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Keelung City')
                         setShowCard(true);
                     }}
@@ -99,6 +107,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Kinmen County')
                         setShowCard(true);
                     }}
@@ -109,6 +118,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Lienchiang County')
                         setShowCard(true);
                     }}
@@ -119,6 +129,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Miaoli County')
                         setShowCard(true);
                     }}
@@ -129,6 +140,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Nantou County')
                         setShowCard(true);
                     }}
@@ -139,6 +151,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('New Taipei City')
                         setShowCard(true);
                     }}
@@ -149,6 +162,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Penghu County')
                         setShowCard(true);
                     }}
@@ -159,6 +173,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Pingtung County')
                         setShowCard(true);
                     }}
@@ -169,6 +184,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Taichung City')
                         setShowCard(true);
                     }}
@@ -179,6 +195,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Tainan City')
                         setShowCard(true);
                     }}
@@ -189,6 +206,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Taipei City')
                         setShowCard(true);
                     }}
@@ -199,6 +217,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Taitung County')
                         setShowCard(true);
                     }}
@@ -209,6 +228,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Taoyuan City')
                         setShowCard(true);
                     }}
@@ -219,6 +239,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Yilan County')
                         setShowCard(true);
                     }}
@@ -229,6 +250,7 @@ const Map = () => {
                 />
                 <path
                     onClick={() => {
+                        setShowCard(false);
                         setCurrentCategory('Yunlin County')
                         setShowCard(true);
                     }}
