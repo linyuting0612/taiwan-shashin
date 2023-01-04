@@ -50,5 +50,14 @@ app.use(express.static(path.join(__dirname2, "../frontend", "build")));
 // Error Middleware
 app.use(errorHandler);
 
+// CSP
+const csp = "default-src 'self' 'unsafe-inline'; style-src 'self' https://fonts.googleapis.com/* 'unsafe-inline'; img-src 'self' https://res.cloudinary.com/* 'unsafe-inline'; font-src 'self' https://fonts.googleapis.com/ 'unsafe-inline';";
+
+app.use(function(req, res, next) {
+  res.setHeader('Content-Security-Policy', csp);
+  next();
+});
+
+
 const PORT = process.env.PORT || 4096;
 server.listen(PORT, () => {console.log(`App listening on port ${PORT}!`)})
