@@ -30,9 +30,9 @@ app.use(bodyParser.json());
 
 import {fileURLToPath} from 'url';
 
-// const __filename = fileURLToPath(import.meta.url);
-// const __dirname = path.dirname(__filename);
-// console.log('directory-name 👉️', __dirname);
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+console.log('directory-name 👉️', __dirname);
 
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
@@ -44,8 +44,8 @@ app.use("/api/photos", photoRoute);
 // app.get("/", (req, res) => {
 //     res.send("Home Page");
 // });
-const __dirname = path.resolve();
-app.use(express.static(path.join(__dirname, "../frontend", "build")));
+const __dirname2 = path.resolve();
+app.use(express.static(path.join(__dirname2, "../frontend", "build")));
 
 // Error Middleware
 app.use(errorHandler);
