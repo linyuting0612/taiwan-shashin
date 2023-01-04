@@ -15,6 +15,7 @@ const PhotoCard = ({currentCategory, closeCard}) => {
 
     useEffect(() => {
         getPhotoData();
+        getPhotoData();
     }, []);
     
 
