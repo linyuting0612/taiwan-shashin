@@ -14,3 +14,4 @@
 2. 分別在 'backend' 和 'frontend' 底下建立新的 .env 檔，依照 .env.defaults 填入變數 (JWT_SECRET 可以隨便填一串字)。
 3. 在 'final' 底下執行 'yarn server'。
 4. 在 'final' 底下執行 'yarn start'。
+5. *注意 : frontend必須在localhost:3000*
