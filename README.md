@@ -4,6 +4,8 @@
 - 組長 : 電機三 B09901077 林宗易
 - 組員 : 資管三 B09705059 羅采蓁
 - 題目名稱 : Taiwan Shashin Web（台湾写真サイト）（臺灣寫真網）
+- 服務內容 : 這是一個寫真網，可以瀏覽台灣各地的照片，也可以上傳自己拍的照片。看見台灣的美麗與哀愁 !
+- 製作心得 : 照片蓁好看。
 - Deploy service 網址 : https://taiwan-shashin-production.up.railway.app
 - Github repo 網址 : https://github.com/linyuting0612/taiwan-shashin
 - Demo 影片網址 : https://youtu.be/Bd2l6c9hrfA
