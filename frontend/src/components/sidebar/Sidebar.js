@@ -13,7 +13,6 @@ const Sidebar = ({ children }) => {
     const goHome = () => {
         navigate("/");
     };
-    console.log("Side bar!")
 
     return (
         <div className = "layout">
