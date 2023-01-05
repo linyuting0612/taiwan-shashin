@@ -23,10 +23,13 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-// app.use(cors({
-//     origin: ["http://localhost:3000"],
-//     credentials: true
-// }));
+if(process.env.NODE_ENV === 'development') {
+  app.use(cors({
+    origin: ["http://localhost:3000"],
+    credentials: true
+  }));
+}
+
 
 import {fileURLToPath} from 'url';
 
@@ -44,8 +47,11 @@ app.use("/api/photos", photoRoute);
 // app.get("/", (req, res) => {
 //     res.send("Home Page");
 // });
-const __dirname2 = path.resolve();
-app.use(express.static(path.join(__dirname2, "../frontend", "build")));
+if(process.env.NODE_ENV === 'production') {
+  const __dirname2 = path.resolve();
+  app.use(express.static(path.join(__dirname2, "../frontend", "build")));
+}
+
 
 // Error Middleware
 app.use(errorHandler);

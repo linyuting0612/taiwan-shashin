@@ -4,10 +4,12 @@ import "./Home.css";
 import { ShowOnLogin, ShowOnLogout } from "../../components/protect/HiddenLink.js";
 import Map from "../map/Map";
 
+//
 import axios from 'axios';
 const axs = axios.create({
-  baseURL: `/api`,
+  baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:4096/api',
 });
+//
 
 const Home = () => {
     console.log("Home Page!")

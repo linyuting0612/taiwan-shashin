@@ -6,7 +6,7 @@ import DOMPurify from "dompurify";
 //
 import axios from 'axios';
 const axs = axios.create({
-  baseURL: `/api`,
+  baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:4096/api',
 });
 //
 
@@ -14,7 +14,6 @@ const axs = axios.create({
 const PhotoCard = ({currentCategory, closeCard}) => {
 
     useEffect(() => {
-        getPhotoData();
         getPhotoData();
     }, []);
     
