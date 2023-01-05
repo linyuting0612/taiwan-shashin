@@ -15,7 +15,7 @@ const PhotoCard = ({currentCategory, closeCard}) => {
 
     useEffect(() => {
         getPhotoData();
-    }, []);
+    }, [currentCategory]);
     
 
     const [imgSrc, setImgSrc] = useState('https://res.cloudinary.com/dstzn1rae/image/upload/v1672889455/Taiwan%20Shashin%20Web/ezdmfn0pfykp82rha1ig.jpg');
@@ -82,22 +82,31 @@ const PhotoCard = ({currentCategory, closeCard}) => {
                     <span className="material-symbols-outlined">close</span>
                 </button>
             </div>
+            
             <div className="imgContainer">
                 <div className="imgContainer-top">
-                    <button id="prevButton" onClick={prevPhoto}>
-                        <span className="material-symbols-outlined">arrow_back_ios</span>
-                    </button>
                     <img className="photo" src={imgSrc} />
-                    <button id="nextButton" onClick={nextPhoto}>
-                        <span className="material-symbols-outlined">arrow_forward_ios</span>
-                    </button>
                 </div>
                 <div className="imgContainer-bottom">
-                    <div className="photoName">{imgName}</div>
-                    <div className="photoDescription">{stripHTML(imgDescription)}</div>
-                    <div className="category">@{currentCategory}</div>
+                    <div className="nextButtonContainer">
+                        <button id="prevButton" onClick={prevPhoto}  style={{display:"inline-block"}}>
+                            <span className="material-symbols-outlined">arrow_back_ios</span>
+                        </button>
+                    </div>
+                    <div className="photoDetail">
+                        <div className="photoName">{imgName}</div>
+                        <div className="photoDescription">{stripHTML(imgDescription)}</div>
+                        <div className="category">@{currentCategory}</div>
+                    </div>
+                    <div className="nextButtonContainer">
+                        <button id="nextButton" onClick={nextPhoto} style={{display:"inline-block"}}>
+                            <span className="material-symbols-outlined">arrow_forward_ios</span>
+                        </button>
+                    </div>
                 </div>
             </div>
+            
+    
         </div>
     );
 };

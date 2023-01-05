@@ -5,8 +5,9 @@ const Dashboard = () => {
     useRedirectLoggedOutUser("/login");
     
     return (
-        <div>
-           <h2>404 Not Found</h2>
+        <div style={{margin:"20px 0px 0px 0px"}}>
+            <h3>About...</h3>
+            <h4>This is webiste for people to upload their photo.</h4>
         </div>
     );
 };
