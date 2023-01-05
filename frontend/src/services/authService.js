@@ -1,7 +1,7 @@
 import axios from "axios";
 import { toast } from "react-toastify";
 
-export const BACKEND_URL = process.env.NODE_ENV === 'priduction' ? '/api' : 'http://localhost:4096/api';
+export const BACKEND_URL = process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:4096/api';
 
 export const validateEmail = (email) => {
     return email.match(

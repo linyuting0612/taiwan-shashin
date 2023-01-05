@@ -2,7 +2,7 @@ import axios from "axios";
 import { toast } from "react-toastify";
 
 
-const BACKEND_URL = process.env.NODE_ENV === 'priduction' ? '/api' : 'http://localhost:4096/api';
+const BACKEND_URL = process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:4096/api';
 
 const API_URL = `${BACKEND_URL}/photos/`;
 
