@@ -18,7 +18,7 @@ const PhotoCard = ({currentCategory, closeCard}) => {
     }, []);
     
 
-    const [imgSrc, setImgSrc] = useState('https://res.cloudinary.com/dstzn1rae/image/upload/v1672763301/Screenshot_2023-01-04_at_12.28.06_AM_jmdyxx.png');
+    const [imgSrc, setImgSrc] = useState('https://res.cloudinary.com/dstzn1rae/image/upload/v1672889455/Taiwan%20Shashin%20Web/ezdmfn0pfykp82rha1ig.jpg');
     // const [imgSrc, setImgSrc] = useState('');
     const [imgName, setImgName] = useState('');
     const [imgDescription, setImgDescription] = useState('');
@@ -82,23 +82,22 @@ const PhotoCard = ({currentCategory, closeCard}) => {
                     <span className="material-symbols-outlined">close</span>
                 </button>
             </div>
-            <div>
-                <button id="prevButton" onClick={prevPhoto}>
-                    <span className="material-symbols-outlined">arrow_back_ios</span>
-                </button>
-            </div>
-
             <div className="imgContainer">
-                <img className="photo" src={imgSrc} />
-                <div className="photoName">{imgName}</div>
-                <div className="photoDescription">{stripHTML(imgDescription)}</div>
-                <div className="category">@{currentCategory}</div>
+                <div className="imgContainer-top">
+                    <button id="prevButton" onClick={prevPhoto}>
+                        <span className="material-symbols-outlined">arrow_back_ios</span>
+                    </button>
+                    <img className="photo" src={imgSrc} />
+                    <button id="nextButton" onClick={nextPhoto}>
+                        <span className="material-symbols-outlined">arrow_forward_ios</span>
+                    </button>
+                </div>
+                <div className="imgContainer-bottom">
+                    <div className="photoName">{imgName}</div>
+                    <div className="photoDescription">{stripHTML(imgDescription)}</div>
+                    <div className="category">@{currentCategory}</div>
+                </div>
             </div>
-            <div>
-                <button id="nextButton" onClick={nextPhoto}>
-                    <span className="material-symbols-outlined">arrow_forward_ios</span>
-                </button>
-            </div>          
         </div>
     );
 };

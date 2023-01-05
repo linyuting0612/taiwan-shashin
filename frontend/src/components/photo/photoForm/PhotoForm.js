@@ -2,10 +2,8 @@ import React, {useState} from "react";
 import ReactQuill from "react-quill";
 import "react-quill/dist/quill.snow.css";
 import Card from "../../card/Card";
-// import {handleDescChange} from AddPhoto 
 
 import "./PhotoForm.css";
-// import AddPhoto from "../../../pages/addPhoto/AddPhoto";
 
 
 const PhotoForm = ({
@@ -44,6 +42,11 @@ const PhotoForm = ({
         { value: 'Yilan County', label: 'Yilan County' },
         { value: 'Yunlin County', label: 'Yunlin County' }
     ]
+
+    const [isShown, setIsShown] = useState(false);
+    const handleClick = e => {
+        setIsShown(current => !current);
+    };
 
     return (
         <div className="add-product">
@@ -93,33 +96,22 @@ const PhotoForm = ({
                     </select>
 
                     <label>Description:</label>
-                    {/* <input
-                        id="decs"
-                        type="text"
-                        // defaultValue="Hello!"
-                        placeholder="Some description for your photo..."
-                        name="decs"
-                        value={photo?.description}
-                        onChange={(e) => handleInputChange(e)}
-                    /> */}
                     <ReactQuill
                         theme="snow"
                         // placeholder="Give some description for your photo..."
                         value={description}
                         onChange={setDescription}
-                        // modules={PhotoForm.modules}
-                        modules={{
-                            clipboard: {
-                                matchVisual: false
-                            }
-                        }}
-                        // formats={PhotoForm.formats}
+                        modules={PhotoForm.modules}
+                        formats={PhotoForm.formats}
                     />
 
                     <div className="--my">
-                        <button type="submit" className="--btn --btn-primary">
+                        <button type="submit" className="--btn --btn-primary" onClick={handleClick}>
                             Save Photo
                         </button>
+                        {isShown && (
+                            <p style={{marginTop:"5px", fontSize:"14px", color:"gray"}}>You may need to wait a moment for uploading...</p>
+                        )}
                     </div>
                 </form>
             </Card>
@@ -127,44 +119,5 @@ const PhotoForm = ({
     );
 };
 
-// PhotoForm.modules = {
-//     toolbar: [
-//         [{ header: "1" }, { header: "2" }, { font: [] }],
-//         [{ size: [] }],
-//         ["bold", "italic", "underline", "strike", "blockquote"],
-//         [{ align: [] }],
-//         [{ color: [] }, { background: [] }],
-//         [
-//             { list: "ordered" },
-//             { list: "bullet" },
-//             { indent: "-1" },
-//             { indent: "+1" },
-//         ],
-//         ["clean"],
-//     ],
-//     clipboard: {
-//         matchVisual: false
-//     },
-// };
-// PhotoForm.formats = [
-//     "header",
-//     "font",
-//     "size",
-//     "bold",
-//     "italic",
-//     "underline",
-//     "strike",
-//     "blockquote",
-//     "color",
-//     "background",
-//     "list",
-//     "bullet",
-//     "indent",
-//     "link",
-//     "video",
-//     "image",
-//     "code-block",
-//     "align",
-// ];
 
 export default PhotoForm;

@@ -38,7 +38,7 @@ export const loginUser = async (userData) => {
             userData
         );
         if (response.statusText === "OK") {
-            toast.success("Login Successful...");
+            toast.success("Login Successfully...");
         }
         return response.data;
     } catch (error) {
@@ -54,6 +54,12 @@ export const loginUser = async (userData) => {
 export const logoutUser = async () => {
     try {
         await axios.get(`${BACKEND_URL}/users/logout`);
+        const response = await axios.get(
+            `${BACKEND_URL}/users/logout`,
+        );
+        if (response.statusText === "OK") {
+            toast.success("Logout Successfully...");
+        }
     } catch (error) {
         const message =
             (error.response && error.response.data && error.response.data.message) ||

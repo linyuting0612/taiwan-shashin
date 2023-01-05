@@ -2,8 +2,8 @@
     background-color: rgba(0, 0, 0, 0);
     position: fixed;
     position: absolute;
-    top: 20vh;
-    left: 60vw;
+    top: 18vh;
+    right: 18vw;
     /* box-sizing: border-box; */
     border-color: white;
     /* float: left; */
@@ -38,9 +38,7 @@
 
 .photo {
     height: 300px;
-    z-index: 0;
-
-
+    max-width: 600px;
 }
 
 

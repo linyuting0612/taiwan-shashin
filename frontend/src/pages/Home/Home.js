@@ -3,48 +3,41 @@ import { Link } from "react-router-dom";
 import "./Home.css";
 import { ShowOnLogin, ShowOnLogout } from "../../components/protect/HiddenLink.js";
 import Map from "../map/Map";
+import { useState } from "react";
 
-//
-import axios from 'axios';
-const axs = axios.create({
-  baseURL: process.env.NODE_ENV === 'production' ? '/api' : 'http://localhost:4096/api',
-});
-//
 
 const Home = () => {
-    console.log("Home Page!")
-    const checkLogin = async () => {
-        const data = await axs.get("/users/loggedin");
-        console.log(data);
-    };
+
+    const [showNav, setShowNav] = useState(true);
+
     return (
         <div className="home">
-            <nav className="container --flex-between ">
-
+            {showNav && 
+                <nav className="container --flex-between ">
                 <ul className="home-links">
                     <p className="title" >Taiwan <br/>Shashin<br/> Web</p>
                     <ShowOnLogout>
                         <li>
-                            <Link to="/register">Register</Link>
+                            <Link to="/register" style={{color: "rgba(0, 0, 0, 0.5)"}}>Register</Link>
                         </li>
                     </ShowOnLogout>
                     <ShowOnLogout>
                         <li>
-                            <button className="--btn --btn-primary">
-                                <Link to="/login">Login</Link>
+                            <button className="--btn" style={{backgroundColor:" rgba(255, 255, 255, 0.7)", boxShadow:"0.1rem 0.1rem 0.2rem lightgray"}}>
+                                <Link to="/login"  style={{color: "rgba(0, 0, 0, 0.5)"}}>Login</Link>
                             </button>
                         </li>
                     </ShowOnLogout>
                     <ShowOnLogin>
                         <li>
-                            <button className="--btn --btn-primary" onClick = {checkLogin}>
-                                <Link to="/dashboard">Dashboard</Link>
+                            <button className="--btn" style={{backgroundColor:" rgba(255, 255, 255, 0.7)", boxShadow:"0.1rem 0.1rem 0.2rem lightgray"}}>
+                                <Link to="/dashboard" style={{color: "rgba(0, 0, 0, 0.5)"}}>Dashboard</Link>
                             </button>
                         </li>
                     </ShowOnLogin>
                 </ul>
-            </nav>
-            <Map/>
+            </nav>}
+            <Map setShowNav={setShowNav}/>
         </div>
     );
 };

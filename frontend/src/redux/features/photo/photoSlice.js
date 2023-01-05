@@ -11,8 +11,6 @@ const initialState = {
     isSuccess: false,
     // isLoading: false,
     message: "",
-    // totalStoreValue: 0,
-    // outOfStock: 0,
     category: [],
 };
 
@@ -55,26 +53,6 @@ export const getPhotos = createAsyncThunk(
         }
     }
 );
-
-/******************* */
-// Get all Photos
-// export const getPhotosByCategory = createAsyncThunk(
-//     "photos/getbycategory",
-//     async (_, thunkAPI) => {
-//         try {
-//             return await photoService.getPhotosByCategory();
-//         } catch (error) {
-//             const message =
-//                 (error.response &&
-//                   error.response.data &&
-//                   error.response.data.message) ||
-//                 error.message ||
-//                 error.toString();
-//             console.log(message);
-//             return thunkAPI.rejectWithValue(message);
-//         }
-//     }
-// );
 
 // Delete a Photo
 export const deletePhoto = createAsyncThunk(
@@ -146,97 +124,12 @@ const photoSlice = createSlice({
             });
             const uniqueCategory = [...new Set(array)];
             state.category = uniqueCategory;
-        },
-    },
-    // extraReducers: (builder) => {
-    //     builder
-    //     //   .addCase(createPhoto.pending, (state) => {
-    //     //       state.isLoading = true;
-    //     //   })
-    //       .addCase(createPhoto.fulfilled, (state, action) => {
-    //         //   state.isLoading = false;
-    //           state.isSuccess = true;
-    //           state.isError = false;
-    //           console.log(action.payload);
-    //           state.photos.push(action.payload);
-    //           toast.success("Photo added successfully");
-    //       })
-    //       .addCase(createPhoto.rejected, (state, action) => {
-    //         //   state.isLoading = false;
-    //           state.isError = true;
-    //           state.message = action.payload;
-    //           toast.error(action.payload);
-    //       })
-    //     //   .addCase(getPhotos.pending, (state) => {
-    //     //       state.isLoading = true;
-    //     //   })
-    //       .addCase(getPhotos.fulfilled, (state, action) => {
-    //         //   state.isLoading = false;
-    //           state.isSuccess = true;
-    //           state.isError = false;
-    //           console.log(action.payload);
-    //           state.photos = action.payload;
-    //       })
-    //       .addCase(getPhotos.rejected, (state, action) => {
-    //         //   state.isLoading = false;
-    //           state.isError = true;
-    //           state.message = action.payload;
-    //           toast.error(action.payload);
-    //       })
-    //     //   .addCase(deletePhoto.pending, (state) => {
-    //     //     //   state.isLoading = true;
-    //     //   })
-    //       .addCase(deletePhoto.fulfilled, (state, action) => {
-    //         //   state.isLoading = false;
-    //           state.isSuccess = true;
-    //           state.isError = false;
-    //           toast.success("Photo deleted successfully");
-    //       })
-    //       .addCase(deletePhoto.rejected, (state, action) => {
-    //         //   state.isLoading = false;
-    //           state.isError = true;
-    //           state.message = action.payload;
-    //           toast.error(action.payload);
-    //       })
-    //     //   .addCase(getPhoto.pending, (state) => {
-    //     //       state.isLoading = true;
-    //     //   })
-    //       // .addCase(getPhoto.fulfilled, (state, action) => {
-    //       //   //   state.isLoading = false;
-    //       //     state.isSuccess = true;
-    //       //     state.isError = false;
-    //       //     state.photo = action.payload;
-    //       // })
-    //       // .addCase(getPhoto.rejected, (state, action) => {
-    //       //   //   state.isLoading = false;
-    //       //     state.isError = true;
-    //       //     state.message = action.payload;
-    //       //     toast.error(action.payload);
-    //       // })
-    //     //   .addCase(updatePhoto.pending, (state) => {
-    //     //       state.isLoading = true;
-    //     //   })
-    //       .addCase(updatePhoto.fulfilled, (state, action) => {
-    //         //   state.isLoading = false;
-    //           state.isSuccess = true;
-    //           state.isError = false;
-    //           toast.success("Photo updated successfully");
-    //       })
-    //       .addCase(updatePhoto.rejected, (state, action) => {
-    //         //   state.isLoading = false;
-    //           state.isError = true;
-    //           state.message = action.payload;
-    //           toast.error(action.payload);
-    //       });
-    // },
+        }
+    }
 });
 
 export const { CALC_CATEGORY } = photoSlice.actions;
-
-// export const selectIsLoading = (state) => state.photo.isLoading;
 export const selectPhoto = (state) => state.photo.photo;
-// export const selectTotalStoreValue = (state) => state.product.totalStoreValue;
-// export const selectOutOfStock = (state) => state.product.outOfStock;
 export const selectCategory = (state) => state.photo.category;
 
 export default photoSlice.reducer;
