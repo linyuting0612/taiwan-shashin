@@ -18,7 +18,7 @@ const PhotoCard = ({currentCategory, closeCard}) => {
     }, [currentCategory]);
     
 
-    const [imgSrc, setImgSrc] = useState('https://res.cloudinary.com/dstzn1rae/image/upload/v1672889455/Taiwan%20Shashin%20Web/ezdmfn0pfykp82rha1ig.jpg');
+    const [imgSrc, setImgSrc] = useState('https://res.cloudinary.com/dstzn1rae/image/upload/v1672894683/loading_j6ln1n.jpg');
     // const [imgSrc, setImgSrc] = useState('');
     const [imgName, setImgName] = useState('');
     const [imgDescription, setImgDescription] = useState('');
@@ -29,7 +29,7 @@ const PhotoCard = ({currentCategory, closeCard}) => {
     const getPhotoData = async () => {
         // const {data} = await axs.get("/photos");
         const {data} = await axs.get(`/photos/${currentCategory}`);
-        console.log(data);
+        console.log("不要偷看console log啦 討厭////");
         setPhotoData(data);
         if(data.length > 0) {
             setImgSrc(data[currentIndex].image.filePath);
