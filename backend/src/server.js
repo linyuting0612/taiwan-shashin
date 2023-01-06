@@ -44,12 +44,15 @@ app.use("/api/users", userRoute);
 app.use("/api/photos", photoRoute);
 
 // Routes
-// app.get("/", (req, res) => {
-//     res.send("Home Page");
-// });
+app.get("/api", (req, res) => {
+    res.send("Hello from server.js");
+});
 if(process.env.NODE_ENV === 'production') {
   const __dirname2 = path.resolve();
   app.use(express.static(path.join(__dirname2, "../frontend", "build")));
+  app.get("/*", function (req, res) {
+    res.sendFile(path.join(__dirname2, "../frontend", "build", "index.html"));
+  });
 }
 
 
